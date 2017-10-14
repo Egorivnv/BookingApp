@@ -1,0 +1,55 @@
+﻿@model BookingApp.Models.Book
+
+@{
+    ViewBag.Title = "NewBook";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.ValidationSummary() @*Если параметр равен true, то вверху будут отображаться только сообщения об ошибках уровня модели, а специфические ошибки будут отображаться рядом с полями ввода. Если же параметр равен false, то вверху отображаются все ошибки.*@
+
+<div>
+<h2>Add a new book:</h2>
+    <form method="post">
+   @*@using (Html.BeginForm())
+    {*@
+        <table>
+            <tr>
+                <td>Enter the name of a book</td>
+                <td>
+                    @Html.TextBoxFor(x=> x.Name)
+                    @Html.ValidationMessageFor(x=>x.Name) @*Сообщение рядом с полем ввода*@
+                </td>
+            </tr>
+            <tr>
+                <td>Enter the author</td>
+                <td>
+                    @Html.TextBoxFor(x => x.Author) @* Linq требует типизированного представления*@
+                </td>
+            </tr>
+            <tr>
+                <td>Enter price</td>
+                <td>
+                    @Html.TextBox("Price") @* не требует типизированного представления*@
+                </td>
+            </tr>
+            <tr>
+                <td>Enter your personal ID</td>
+                <td>
+                    @Html.TextBox("ManagerId")
+                </td>
+            </tr>
+            <tr>
+                <td>Enter your surname</td>
+                <td>
+                    <input type="text" name="surname" />
+                </td>
+            </tr>
+        </table>
+        <br />
+        <input type="image" src="~/Images/Btn1.bmp" value="Add" alt="Add"  />
+    @*}*@
+   </form>
+
+</div>
+
+

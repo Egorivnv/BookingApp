@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "NewBookRez";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>NewBookRez</h2>
+<div>
+   @Model.Name @ViewBag.Surname, the book @ViewBag.Book.Name was added. 
+</div>
+<hr />
+<br />
+<a href="/Home/Index">Home page</a>
+@*@Html.ActionLink("Homepage", "Index", "Home")*@
